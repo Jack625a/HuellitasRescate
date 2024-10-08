@@ -1,0 +1,84 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step
+        [stepControl]="primerFormulario"
+        label="Informacion Personal"
+    >
+    <form [formGroup]="primerFormulario" >
+        <mat-form-field>
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput placeholder="Nombre" formControlName="nombre" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Celular</mat-label>
+            <input matInput type="tel" placeholder="Celular" formControlName="celular" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" placeholder="correo@ejemplo.com" formControlName="correo" required >
+        </mat-form-field>
+
+        <div>
+            <button mat-flat-button matStepperNext [disabled]="!primerFormulario.valid">Siguiente</button>
+        </div>
+        
+
+    </form>
+
+    </mat-step> 
+    <mat-step
+    [stepControl]="segundoFormulario"
+        label="Informacion Mascota"
+    >
+    <form
+        [formGroup]="segundoFormulario"
+    >
+    <mat-form-field>
+        <mat-label>Tipo de Mascota</mat-label>
+        <input matInput placeholder="Perro , Gato" formControlName="tipoMascota" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Nombre Mascota</mat-label>
+        <input matInput placeholder="Nombre de la Mascota" formControlName="nombreMascota">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Razon de la Adopción</mat-label>
+        <input matInput placeholder="Razon Adopción" formControlName="razon" required>
+    </mat-form-field>
+    <br>
+    <div>
+        <button mat-flat-button matStepperNext [disabled]="!segundoFormulario.valid">Siguiente</button>
+    </div>
+    </form>
+
+    </mat-step>
+    <mat-step
+    [stepControl]="tercerFormulario"
+    label="Informacion de Contacto"
+    >
+    <form
+        [formGroup]="tercerFormulario"
+    >
+    <mat-form-field>
+        <mat-label>Direccion</mat-label>
+        <input matInput placeholder="Direccion" formControlName="direccion" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Ci</mat-label>
+        <input matInput placeholder="Carnet de Identidad" formControlName="ci">
+    </mat-form-field>
+    <br>
+    
+    <div>
+        <button mat-flat-button matStepperNext [disabled]="!tercerFormulario.valid">Siguiente</button>
+        <br>
+        <br>
+        <button mat-flat-button (click)="enviarFormulario()">Enviar</button>
+    </div>
+    </form>
+    </mat-step>
+</mat-horizontal-stepper>

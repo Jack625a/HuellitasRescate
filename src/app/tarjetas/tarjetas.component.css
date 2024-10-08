@@ -1,0 +1,19 @@
+.contenedor{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  
+}
+.contendorCard{
+    width: 300px;
+}
+p{
+    margin-top: 10px;
+}
+.botones{
+    margin: 10px;
+}
+img{
+    height: 350px;
+}

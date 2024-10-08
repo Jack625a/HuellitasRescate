@@ -1,0 +1,25 @@
+<div class="contenedor">
+    <mat-card *ngFor="let mascota of mascotas" class="contendorCard">
+        
+        <mat-card-header>
+            <mat-card-title>
+               {{mascota.nombre}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               {{mascota.sexo}} - {{mascota.edad}} Años 
+            </mat-card-subtitle>
+      </mat-card-header>
+        <img mat-card-image [src]="mascota.foto"/>
+        <mat-card-content>
+            <p>{{mascota.descripcion}}</p>
+        </mat-card-content>
+        
+        <mat-card-actions class="botones">
+            <button mat-button (click)="mostrarAlerta('1000ms','1000ms')">Adoptar</button>
+            <button mat-flat-button (click)="enviarWhatsapp(mascota.contacto)">Contactar</button>
+        </mat-card-actions>   
+    </mat-card>
+
+
+
+</div>
